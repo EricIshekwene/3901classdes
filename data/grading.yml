@@ -1,0 +1,45 @@
+components:
+  - name: "Coursework"
+    total: 50
+    parts:
+      - label: "Group work: projects"
+        points: 30
+      - label: "Individual work: assignments"
+        points: 15
+      - label: "Attendance"
+        points: 5
+  - name: "Exams"
+    total: 50
+    parts:
+      - label: "Midterm 1"
+        points: 10
+      - label: "Midterm 2"
+        points: 10
+      - label: "Final exam"
+        points: 30
+
+minimum: "To successfully complete the course, students must earn at least 25 out of 50 points in each major assessment component."
+
+scale:
+  - grade: "A"
+    range: "100% – 85%"
+  - grade: "A-"
+    range: "84.9% – 80%"
+  - grade: "B+"
+    range: "79.9% – 77%"
+  - grade: "B"
+    range: "76.9% – 74%"
+  - grade: "B-"
+    range: "73.9% – 70%"
+  - grade: "C+"
+    range: "69.9% – 67%"
+  - grade: "C"
+    range: "66.9% – 64%"
+  - grade: "C-"
+    range: "63.9% – 60%"
+  - grade: "D+"
+    range: "59.9% – 57%"
+  - grade: "D"
+    range: "56.9% – 50%"
+  - grade: "E"
+    range: "49.9% – 0%"

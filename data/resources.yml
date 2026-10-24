@@ -1,0 +1,49 @@
+textbook:
+  title: "Ruby on Rails Tutorial, 7th Edition"
+  author: "Michael Hartl"
+  note: "Free through the OSU Library's O'Reilly (Safari) access."
+  url: "https://learning.oreilly.com/"
+
+setup:
+  - title: "Access COELINUX"
+    carmen_path: "/pages/first-accessing-coelinux"
+    summary: "Connect through the Ivanti VPN with BuckeyePass, then open a desktop session with FastX."
+    links:
+      - label: "COE VPN"
+        href: "https://vpn.coeit.osu.edu"
+      - label: "BuckeyePass"
+        href: "https://buckeyepass.osu.edu"
+      - label: "FastX client"
+        href: "https://www.starnet.com/download/fastx-client"
+      - label: "ETS wiki"
+        href: "https://ets.osu.edu/ets-wiki"
+  - title: "Install Rails and Middleman"
+    carmen_path: "/pages/second-install-rails-and-middleman"
+    summary: "Numbered install steps with troubleshooting. Your Rails server runs at localhost:3000."
+    links: []
+  - title: "Getting Started with Ruby on Rails"
+    carmen_path: "/pages/getting-started-with-ruby-on-rails-ror"
+    summary: "A short command walkthrough for creating and running your first Rails app."
+    links: []
+
+tools:
+  - name: "COELINUX"
+    use: "Course Linux environment (via Ivanti VPN and FastX v3)"
+  - name: "Git"
+    use: "Version control for team projects"
+  - name: "VS Code"
+    use: "Editor"
+  - name: "Ruby"
+    use: "Language for scripting and Rails"
+  - name: "Middleman"
+    use: "Static site generator (Project 4)"
+  - name: "Rails"
+    use: "Web application framework"
+  - name: "Postman"
+    use: "Testing web APIs"
+  - name: "Office 365"
+    use: "Docs and team communication"
+
+code:
+  label: "Class code on GitHub"
+  href: "https://github.com/Bahaa-Amayreh/CSE-3901-Web-Applications"

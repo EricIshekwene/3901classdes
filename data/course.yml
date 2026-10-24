@@ -1,0 +1,65 @@
+code: "CSE 3901"
+title: "Project: Design, Development, and Documentation of Web Applications"
+short_title: "Web Applications Project"
+credits: 4
+carmen_url: "https://osu.instructure.com/courses/214057"
+
+term:
+  name: "Autumn 2026"
+  # Monday of Week 1. Week dates on the schedule are counted from here.
+  first_monday: "2026-08-24"
+  starts: "2026-08-26"
+  ends: "2026-12-09"
+
+lectures:
+  room: "Dreese Lab 305"
+  days: "Mon, Wed, Fri"
+  time: "12:40 – 1:35 PM"
+
+staff:
+  - name: "Baha Amayreh"
+    role: "Instructor"
+    email: "amayreh.1@osu.edu"
+    office: "Baker Lab Room #443"
+    hours:
+      - day: "Monday"
+        time: "1:45 – 2:45 PM"
+      - day: "Wednesday"
+        time: "1:45 – 2:45 PM"
+    note: "If you cannot attend my general office hours, email me to schedule an alternative time."
+  - name: "Dennis Kuznetsov"
+    role: "Grader"
+    email: "kuznetsov.13@osu.edu"
+    office: null
+    hours: []
+    note: "Office hours: TBD"
+
+weekly:
+  - day: "Monday"
+    slots:
+      - time: "12:40 – 1:35 PM"
+        label: "Lecture"
+      - time: "1:45 – 2:45 PM"
+        label: "Office hours"
+  - day: "Wednesday"
+    slots:
+      - time: "12:40 – 1:35 PM"
+        label: "Lecture"
+      - time: "1:45 – 2:45 PM"
+        label: "Office hours"
+  - day: "Friday"
+    slots:
+      - time: "12:40 – 1:35 PM"
+        label: "Lecture"
+
+carmen_links:
+  - label: "Announcements"
+    path: "/announcements"
+  - label: "Modules"
+    path: "/modules"
+  - label: "Assignments"
+    path: "/assignments"
+  - label: "Grades"
+    path: "/grades"
+  - label: "Discussions"
+    path: "/discussion_topics"

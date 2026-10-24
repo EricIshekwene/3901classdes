@@ -1,0 +1,132 @@
+# One schedule for the whole site. Home, Schedule, and the Carmen export all read this file.
+#
+# item kinds: lecture, exam, break, workshop, resource
+# Fields left out (date, topic, files) were not confirmed from the current Carmen pages.
+# Fill them in from the Lectures page and every page updates on the next build.
+weeks:
+  - number: 1
+    topic: "Web foundations"
+    items:
+      - kind: lecture
+        lecture: 1
+        date: "2026-08-26"
+        title: "Web Applications: Overview and Architecture"
+        files:
+          - label: "lecture01-Architecture.pdf"
+  - number: 2
+    topic: "Ruby"
+    items:
+      - kind: lecture
+        lecture: 5
+        date: "2026-09-04"
+        title: "Ruby: Introduction, Basics"
+        reading: "Ruby on Rails Tutorial, 7th Edition, §4.2–4.5"
+  - number: 3
+    items:
+      - kind: break
+        date: "2026-09-07"
+        title: "Labor Day"
+  - number: 4
+    items: []
+  - number: 5
+    items: []
+  - number: 6
+    topic: "HTML & CSS"
+    items:
+      - kind: exam
+        date: "2026-09-30"
+        title: "Midterm 1"
+        detail: "7:00 – 7:55 PM · Dreese Lab 113 · Lectures 1–13, Web APIs"
+        files:
+          - label: "Mid 1 Sample.pdf"
+      - kind: lecture
+        lecture: 15
+        title: "HTML"
+  - number: 7
+    topic: "HTML & CSS"
+    items: []
+  - number: 8
+    topic: "HTML & CSS"
+    items:
+      - kind: lecture
+        lecture: 19
+        title: "CSS Grid and Media Queries"
+      - kind: lecture
+        lecture: 20
+        title: "Static Site Generation"
+        files:
+          - label: "Middleman.zip"
+      - kind: break
+        date: "2026-10-16"
+        title: "Autumn Break"
+  - number: 9
+    items:
+      - kind: lecture
+        lecture: "21–23"
+        title: "Lectures 21–23"
+        files:
+          - label: "Simple Calculator.html"
+  - number: 10
+    topic: "DOM"
+    items:
+      - kind: lecture
+        lecture: "24–25"
+        title: "Lectures 24–25"
+      - kind: lecture
+        lecture: 26
+        title: "DOM"
+        files:
+          - label: "Mid 2 Sample.pdf"
+  - number: 11
+    topic: "Rails"
+    items:
+      - kind: exam
+        date: "2026-11-04"
+        title: "Midterm 2"
+        detail: "7:00 – 7:55 PM · Dreese Lab 113 · Lectures 15–26"
+      - kind: lecture
+        lecture: 27
+        title: "Ruby on Rails"
+        links:
+          - label: "Getting Started with Ruby on Rails"
+            href: "resources.html#setup"
+  - number: 12
+    topic: "Rails"
+    items:
+      - kind: lecture
+        lecture: 29
+        title: "Model"
+      - kind: resource
+        title: "Live coding: CRUD"
+        links:
+          - label: "Class code on GitHub"
+            href: "https://github.com/Bahaa-Amayreh/CSE-3901-Web-Applications"
+  - number: 13
+    topic: "Rails"
+    items:
+      - kind: lecture
+        lecture: "30–34"
+        title: "Rails, continued"
+  - number: 14
+    items:
+      - kind: workshop
+        title: "Debugging Workshop"
+        files:
+          - label: "Debugging Workshop.pdf"
+  - number: 15
+    topic: "Presentations"
+    items:
+      - kind: resource
+        title: "Project presentations"
+  - number: 16
+    topic: "Review"
+    items:
+      - kind: resource
+        title: "Project presentations and final review"
+  - number: 17
+    topic: "Finals week"
+    items:
+      - kind: exam
+        date: "2026-12-16"
+        title: "Final Exam"
+        detail: "6:00 – 7:45 PM · Mendenhall Lab 100 · Comprehensive"

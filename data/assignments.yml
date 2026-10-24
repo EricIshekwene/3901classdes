@@ -1,0 +1,38 @@
+# Points match Carmen. Only confirmed due dates are listed; the rest live in Carmen Assignments.
+projects:
+  - name: "Project 1"
+    points: "1"
+  - name: "Project 2"
+    points: "8 + 2 video/contribution"
+  - name: "Project 3"
+    points: "8 + 2 video/contribution"
+  - name: "Project 4"
+    title: "Static Web Site Design"
+    points: "8 + 2 video/contribution"
+    due: "2026-10-26"
+    due_time: "11:59 PM ET"
+    summary: "Redesign a faculty website from the ground up with Middleman. HTML and CSS only, validated, and fully responsive."
+  - name: "Project 5"
+    points: "8 + 2 video/contribution"
+  - name: "Project 6"
+    points: "10 + 18 rubric + 2"
+
+individual:
+  - name: "Activities 1–5"
+    points: "3 each"
+  - name: "Quiz 1"
+    points: "15"
+  - name: "Pre-test"
+    points: "17"
+  - name: "Roll Call Attendance"
+    points: "5"
+
+policies:
+  - title: "Late work"
+    text: "Late submissions of group work will be accepted, but with a penalty of 10% off per day late."
+  - title: "Attendance"
+    text: "Students may miss up to three classes and still receive full attendance credit."
+  - title: "Teams"
+    text: "Teams have four or five students. Select your team by September 2, 2026 in Carmen → People → Project Groups."
+  - title: "Exams"
+    text: "You must complete the midterm and final exams yourself, without any external help or communication."
