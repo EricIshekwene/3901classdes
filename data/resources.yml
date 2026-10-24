@@ -1,7 +1,7 @@
 textbook:
   title: "Ruby on Rails Tutorial, 7th Edition"
   author: "Michael Hartl"
-  note: "Free through the OSU Library's O'Reilly (Safari) access."
+  note: "Available through the OSU Library's O'Reilly (Safari) access, as a book and as video."
   url: "https://learning.oreilly.com/"
 
 setup:
@@ -30,9 +30,9 @@ tools:
   - name: "COELINUX"
     use: "Course Linux environment (via Ivanti VPN and FastX v3)"
   - name: "Git"
-    use: "Version control for team projects"
+    use: "Version control"
   - name: "VS Code"
-    use: "Editor"
+    use: "Code editor"
   - name: "Ruby"
     use: "Language for scripting and Rails"
   - name: "Middleman"
@@ -42,7 +42,7 @@ tools:
   - name: "Postman"
     use: "Testing web APIs"
   - name: "Office 365"
-    use: "Docs and team communication"
+    use: "Microsoft 365 apps through OSU"
 
 code:
   label: "Class code on GitHub"

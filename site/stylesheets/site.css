@@ -367,6 +367,10 @@ main {
   margin-bottom: 0;
 }
 
+.card p {
+  font-size: var(--text-sm);
+}
+
 .card-title {
   margin-bottom: var(--space-1);
   font-size: var(--text-base);
@@ -1124,6 +1128,10 @@ tfoot th {
   margin-top: var(--space-6);
 }
 
+.doc .card h3 {
+  margin-top: 0;
+}
+
 .doc ul,
 .doc ol {
   padding-left: var(--space-6);
@@ -1244,6 +1252,12 @@ tfoot th {
 }
 
 /* ---------- Resources ---------- */
+
+.plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .setup-step {
   display: grid;

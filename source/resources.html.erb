@@ -1,0 +1,64 @@
+---
+title: Resources
+description: Setup guides, textbook, tools, and class code for CSE 3901.
+---
+<header class="page-header">
+  <span class="eyebrow">Get set up</span>
+  <h1>Resources</h1>
+  <p>Setup guides, the textbook, and the tools used in this course.</p>
+</header>
+
+<section class="section" id="setup" aria-labelledby="setup-heading">
+  <div class="section-header">
+    <h2 id="setup-heading">Development environment</h2>
+    <span class="badge">Do these in order</span>
+  </div>
+  <ol class="card-grid plain-list">
+    <% data.resources.setup.each_with_index do |step, index| %>
+      <li class="card setup-step">
+        <span class="step-number" aria-hidden="true"><%= index + 1 %></span>
+        <h3><%= step.title %></h3>
+        <p><%= step.summary %></p>
+        <% unless step.links.empty? %>
+          <ul class="resource-list">
+            <% step.links.each do |link| %>
+              <li><a href="<%= link.href %>"><%= icon "external" %><%= link.label %></a></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div><a class="button button-outline" href="<%= carmen step.carmen_path %>">Open full guide <%= icon "arrow-right" %></a></div>
+      </li>
+    <% end %>
+  </ol>
+</section>
+
+<section class="section" aria-labelledby="book-heading">
+  <div class="section-header">
+    <h2 id="book-heading">Textbook and code</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <h3 class="card-title"><%= icon "book" %> <%= data.resources.textbook.title %></h3>
+      <p class="card-subtitle"><%= data.resources.textbook.author %></p>
+      <p><%= data.resources.textbook.note %></p>
+      <a class="button button-outline" href="<%= data.resources.textbook.url %>">Open on O'Reilly <%= icon "external" %></a>
+    </div>
+    <div class="card">
+      <h3 class="card-title"><%= icon "code" %> Class code</h3>
+      <p class="card-subtitle">Examples from lecture and live coding</p>
+      <p>Rails views, partials, and stylesheets written in class.</p>
+      <a class="button button-outline" href="<%= data.resources.code.href %>"><%= data.resources.code.label %> <%= icon "external" %></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="tools-heading">
+  <div class="section-header">
+    <h2 id="tools-heading">Tools</h2>
+  </div>
+  <ul class="tool-list">
+    <% data.resources.tools.each do |tool| %>
+      <li><strong><%= tool.name %></strong><span><%= tool.use %></span></li>
+    <% end %>
+  </ul>
+</section>

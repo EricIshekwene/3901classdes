@@ -1,0 +1,68 @@
+---
+title: Assignments
+description: Team projects, individual work, and submission policies for CSE 3901.
+---
+<header class="page-header">
+  <span class="eyebrow">Submitted on Carmen</span>
+  <h1>Assignments</h1>
+  <p>Six team projects make up most of the coursework. Due dates and submissions are in <a href="<%= carmen "/assignments" %>">Carmen Assignments</a>.</p>
+</header>
+
+<section class="section" aria-labelledby="projects-heading">
+  <div class="section-header">
+    <h2 id="projects-heading">Team projects</h2>
+    <a href="<%= url_for "syllabus.html" %>#grading">30 points of your grade</a>
+  </div>
+  <div class="card-grid">
+    <% data.assignments.projects.each do |project| %>
+      <% due = project.due && to_date(project.due) %>
+      <article class="card project-card<%= " is-featured" if due && due >= config[:today] %>">
+        <h3>
+          <%= project.name %>
+          <% if due && due >= config[:today] %>
+            <span class="badge badge-due">Due <%= short_date(due) %></span>
+          <% elsif due %>
+            <span class="badge">Closed</span>
+          <% end %>
+        </h3>
+        <% if project.title %><p class="project-summary"><strong><%= project.title %></strong></p><% end %>
+        <p class="project-points"><%= project.points %> <%= project.points == "1" ? "point" : "points" %></p>
+        <% if project.summary %><p class="project-summary"><%= project.summary %></p><% end %>
+        <% if due %><p class="project-points"><%= icon "calendar" %> <%= long_date(due) %>, <%= project.due_time %></p><% end %>
+      </article>
+    <% end %>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="individual-heading">
+  <div class="section-header">
+    <h2 id="individual-heading">Individual work</h2>
+    <a href="<%= url_for "syllabus.html" %>#grading">15 points of your grade</a>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">Assignment</th><th scope="col" class="num">Carmen points</th></tr>
+      </thead>
+      <tbody>
+        <% data.assignments.individual.each do |item| %>
+          <tr><th scope="row"><%= item.name %></th><td class="num"><%= item.points %></td></tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="policies-heading">
+  <div class="section-header">
+    <h2 id="policies-heading">Policies</h2>
+  </div>
+  <ul class="policy-list">
+    <% data.assignments.policies.each do |policy| %>
+      <li class="card">
+        <h3><%= policy.title %></h3>
+        <p><%= policy.text %></p>
+      </li>
+    <% end %>
+  </ul>
+</section>
