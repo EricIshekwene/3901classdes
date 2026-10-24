@@ -1326,7 +1326,7 @@ tfoot th {
 
 @media (max-width: 40em) {
   .site-header .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "brand"
       "nav";
@@ -1336,6 +1336,7 @@ tfoot th {
 
   .site-nav {
     justify-self: stretch;
+    min-width: 0;
     margin: 0 calc(var(--space-2) * -1);
     padding-bottom: var(--space-2);
   }
@@ -1351,11 +1352,11 @@ tfoot th {
   }
 
   .week-nav {
-    top: 5.75rem;
+    top: 4.625rem;
   }
 
   html {
-    scroll-padding-top: 10rem;
+    scroll-padding-top: 9rem;
   }
 
   .week-item-title.is-pending {
