@@ -50,7 +50,7 @@ weeks:
     items:
       - kind: lecture
         lecture: 19
-        title: "CSS Grid and Media Queries"
+        title: "Grid / Media Queries"
       - kind: lecture
         lecture: 20
         title: "Static Site Generation"
@@ -86,27 +86,29 @@ weeks:
         detail: "7:00 – 7:55 PM · Dreese Lab 113 · Lectures 15–26"
       - kind: lecture
         lecture: 27
-        title: "Ruby on Rails"
+        title: "Lecture 27"
+      - kind: resource
+        title: "Getting Started with Ruby on Rails"
         links:
-          - label: "Getting Started with Ruby on Rails"
+          - label: "Setup guide"
             href: "resources.html#setup"
+      - kind: resource
+        title: "Rails live coding and CRUD (weeks 11–13)"
+        links:
+          - label: "Class code on GitHub"
+            href: "https://github.com/Bahaa-Amayreh/CSE-3901-Web-Applications"
   - number: 12
     topic: "Rails"
     items:
       - kind: lecture
         lecture: 29
         title: "Model"
-      - kind: resource
-        title: "Live coding: CRUD"
-        links:
-          - label: "Class code on GitHub"
-            href: "https://github.com/Bahaa-Amayreh/CSE-3901-Web-Applications"
   - number: 13
     topic: "Rails"
     items:
       - kind: lecture
-        lecture: "30–34"
-        title: "Rails, continued"
+        lecture: "30–32"
+        title: "Lectures 30–32"
   - number: 14
     items:
       - kind: workshop
