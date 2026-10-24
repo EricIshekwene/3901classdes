@@ -1,0 +1,20 @@
+# Where each generated page lives inside Carmen. Links between pages are rewritten to these paths.
+# Home pastes into the course front page; Schedule replaces the existing Lectures page so its URL
+# and #weekN anchors keep working.
+pages:
+  index.html:
+    path: ""
+    paste_into: "Front page (Home → Edit)"
+  schedule.html:
+    path: "/pages/lectures"
+    paste_into: "Pages → Lectures (existing page)"
+  # A new page, not the Syllabus tool: the official syllabus keeps its full policy text.
+  syllabus.html:
+    path: "/pages/syllabus-summary"
+    paste_into: "New page titled \"Syllabus Summary\""
+  assignments.html:
+    path: "/pages/course-assignments"
+    paste_into: "New page titled \"Course Assignments\""
+  resources.html:
+    path: "/pages/course-resources"
+    paste_into: "New page titled \"Course Resources\""
