@@ -1,0 +1,39 @@
+<%
+  label = case item.kind
+          when "lecture" then "#{item.lecture.to_s.include?("–") ? "Lectures" : "Lecture"} #{item.lecture}"
+          when "exam" then "Exam"
+          when "break" then "No class"
+          when "workshop" then "Workshop"
+          when "resource" then "Materials"
+          else "Class"
+          end
+%>
+<li class="week-item<%= " is-#{item.kind}" if %w[exam break].include?(item.kind) %>">
+  <div class="week-item-head">
+    <span class="week-item-label"><%= label %></span>
+    <% if item.title %>
+      <p class="week-item-title"><%= item.title %></p>
+    <% else %>
+      <p class="week-item-title is-pending">Topic posted in <a href="<%= carmen "/modules" %>">Carmen Modules</a></p>
+    <% end %>
+    <% if item.date %>
+      <span class="week-item-date"><%= short_date(item.date) %></span>
+    <% end %>
+  </div>
+  <% if item.detail %>
+    <p class="week-item-detail"><%= item.detail %></p>
+  <% end %>
+  <% if item.reading %>
+    <p class="week-item-detail"><%= icon "book" %> <%= item.reading %></p>
+  <% end %>
+  <% if item.files || item.links %>
+    <ul class="resource-list">
+      <% (item.files || []).each do |file| %>
+        <li><a href="<%= carmen "/modules" %>"><%= icon "file" %><%= file.label %></a></li>
+      <% end %>
+      <% (item.links || []).each do |link| %>
+        <li><a href="<%= link.href.start_with?("http") ? link.href : url_for(link.href.split("#").first) + (link.href.include?("#") ? "#" + link.href.split("#").last : "") %>"><%= icon(link.href.include?("github") ? "code" : "arrow-right") %><%= link.label %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
+</li>

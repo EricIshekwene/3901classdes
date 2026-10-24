@@ -1,0 +1,46 @@
+---
+title: Schedule
+description: Week-by-week lecture schedule, exams, and course materials for CSE 3901.
+---
+<header class="page-header">
+  <span class="eyebrow">Weeks 1–<%= data.schedule.weeks.size %></span>
+  <h1>Schedule</h1>
+  <p>Lectures, exams, and materials by week. Lecture slides and files are posted in Carmen Modules.</p>
+</header>
+
+<% current = current_week_number %>
+<nav class="week-nav" aria-label="Jump to a week">
+  <ol>
+    <% data.schedule.weeks.each do |week| %>
+      <li><a href="#week<%= week.number %>"<%= ' class="is-current" aria-current="true"' if week.number == current %> aria-label="Week <%= week.number %>"><%= week.number %></a></li>
+    <% end %>
+  </ol>
+</nav>
+
+<div class="schedule-legend" aria-hidden="true">
+  <span class="badge badge-current">This week</span>
+  <span class="badge badge-exam">Exam</span>
+  <span class="badge badge-break">No class</span>
+</div>
+
+<% data.schedule.weeks.each do |week| %>
+  <section class="week" id="week<%= week.number %>" aria-labelledby="week<%= week.number %>-heading">
+    <div class="week-meta">
+      <h2 id="week<%= week.number %>-heading">
+        <%= week.number == data.schedule.weeks.size ? "Finals" : "Week #{week.number}" %>
+        <% if week.number == current %><span class="badge badge-current">This week</span><% end %>
+      </h2>
+      <p class="week-dates"><%= week_range(week) %></p>
+      <% if week.topic %><span class="badge"><%= week.topic %></span><% end %>
+    </div>
+    <% if week.items.empty? %>
+      <p class="week-empty">Lecture topics for this week are listed in <a href="<%= carmen "/modules" %>">Carmen Modules</a>.</p>
+    <% else %>
+      <ol class="week-items">
+        <% week.items.each do |item| %>
+          <%= partial "partials/week_item", locals: { item: item } %>
+        <% end %>
+      </ol>
+    <% end %>
+  </section>
+<% end %>

@@ -1,6 +1,7 @@
 # One schedule for the whole site. Home, Schedule, and the Carmen export all read this file.
 #
-# item kinds: lecture, exam, break, workshop, resource
+# item kinds: lecture, exam, break, workshop, class, resource
+# A lecture with no title shows "Topic posted in Carmen Modules".
 # Fields left out (date, topic, files) were not confirmed from the current Carmen pages.
 # Fill them in from the Lectures page and every page updates on the next build.
 weeks:
@@ -63,7 +64,6 @@ weeks:
     items:
       - kind: lecture
         lecture: "21–23"
-        title: "Lectures 21–23"
         files:
           - label: "Simple Calculator.html"
   - number: 10
@@ -71,7 +71,6 @@ weeks:
     items:
       - kind: lecture
         lecture: "24–25"
-        title: "Lectures 24–25"
       - kind: lecture
         lecture: 26
         title: "DOM"
@@ -86,7 +85,6 @@ weeks:
         detail: "7:00 – 7:55 PM · Dreese Lab 113 · Lectures 15–26"
       - kind: lecture
         lecture: 27
-        title: "Lecture 27"
       - kind: resource
         title: "Getting Started with Ruby on Rails"
         links:
@@ -108,7 +106,6 @@ weeks:
     items:
       - kind: lecture
         lecture: "30–32"
-        title: "Lectures 30–32"
   - number: 14
     items:
       - kind: workshop
@@ -118,12 +115,12 @@ weeks:
   - number: 15
     topic: "Presentations"
     items:
-      - kind: resource
+      - kind: class
         title: "Project presentations"
   - number: 16
     topic: "Review"
     items:
-      - kind: resource
+      - kind: class
         title: "Project presentations and final review"
   - number: 17
     topic: "Finals week"
