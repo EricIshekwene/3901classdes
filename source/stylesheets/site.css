@@ -1124,6 +1124,10 @@ tfoot th {
   margin-top: var(--space-6);
 }
 
+.doc .card h3 {
+  margin-top: 0;
+}
+
 .doc ul,
 .doc ol {
   padding-left: var(--space-6);

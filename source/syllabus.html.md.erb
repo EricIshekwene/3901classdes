@@ -1,0 +1,89 @@
+---
+title: Syllabus
+description: Grading, policies, materials, and technologies for CSE 3901.
+---
+<header class="page-header">
+  <span class="eyebrow"><%= data.course.term.name %> · <%= data.course.credits %> credit hours</span>
+  <h1>Syllabus</h1>
+  <p>The short version of the course syllabus. The official syllabus, with the full course description, objectives, and university policies, is on <a href="<%= carmen "/assignments/syllabus" %>">Carmen</a>.</p>
+</header>
+
+<div class="doc-layout">
+<nav class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#at-a-glance">At a glance</a></li>
+    <li><a href="#how-it-works">How the course works</a></li>
+    <li><a href="#grading">Grading</a></li>
+    <li><a href="#policies">Course policies</a></li>
+    <li><a href="#materials">Materials and technology</a></li>
+    <li><a href="#university-policies">University policies</a></li>
+  </ol>
+</nav>
+
+<div class="doc" markdown="1">
+
+## At a glance {#at-a-glance}
+
+<div class="table-wrap">
+  <table>
+    <tbody>
+      <tr><th scope="row">Course</th><td><%= data.course.code %>: <%= data.course.title %></td></tr>
+      <tr><th scope="row">Term</th><td><%= data.course.term.name %> (<%= to_date(data.course.term.starts).strftime("%B %-d") %> to <%= to_date(data.course.term.ends).strftime("%B %-d") %>)</td></tr>
+      <tr><th scope="row">Credits</th><td><%= data.course.credits %></td></tr>
+      <tr><th scope="row">Lectures</th><td><%= data.course.lectures.days %>, <%= data.course.lectures.time %>, <%= data.course.lectures.room %></td></tr>
+      <tr><th scope="row">Instructor</th><td><%= data.course.staff.first.name %>, <a href="mailto:<%= data.course.staff.first.email %>"><%= data.course.staff.first.email %></a></td></tr>
+    </tbody>
+  </table>
+</div>
+
+## How the course works {#how-it-works}
+
+Most of your grade comes from building web applications in a team. Lectures introduce each technology, individual activities and a quiz check your own understanding, and three exams cover the material.
+
+- **Teams** have four or five students. Pick your team by **September 2, 2026** in Carmen → People → Project Groups.
+- **Projects** are submitted as a team in Carmen. Projects 2 through 6 also include a short video and a contribution report.
+- **Exams** are taken individually. See the dates on the [home page](<%= url_for "index.html" %>#exams).
+
+## Grading {#grading}
+
+The course is worth 100 points, split evenly between coursework and exams.
+
+<%= partial "partials/grading" %>
+
+## Course policies {#policies}
+
+<% data.assignments.policies.each do |policy| %>
+### <%= policy.title %>
+
+<%= policy.text %>
+
+<% end %>
+
+## Materials and technology {#materials}
+
+### Textbook
+
+*<%= data.resources.textbook.title %>* by <%= data.resources.textbook.author %>. <%= data.resources.textbook.note %>
+
+### Software
+
+Setup guides for each tool are on the [Resources page](<%= url_for "resources.html" %>).
+
+<% data.resources.tools.each do |tool| %>
+- **<%= tool.name %>**: <%= tool.use %>
+<% end %>
+
+## University policies {#university-policies}
+
+The official syllabus on Carmen includes the full text of these policies:
+
+- Academic integrity and other academic policies
+- Your mental health
+- Accessibility accommodations through Student Life Disability Services
+- Accessibility of course technology
+
+[Read the official syllabus on Carmen](<%= carmen "/assignments/syllabus" %>)
+
+</div>
+</div>

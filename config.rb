@@ -6,7 +6,7 @@ set :layout, "layout"
 set :relative_links, true
 
 set :markdown_engine, :kramdown
-set :markdown, input: "GFM", auto_ids: true, hard_wrap: false
+set :markdown, auto_ids: true, smart_quotes: %w[lsquo rsquo ldquo rdquo]
 
 activate :relative_assets
 
