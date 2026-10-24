@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= current_page.data.title ? "#{current_page.data.title} · " : "" %><%= data.course.code %> · <%= data.course.term.name %></title>
+  <meta name="description" content="<%= current_page.data.description || "#{data.course.code}: #{data.course.title}, The Ohio State University, #{data.course.term.name}." %>">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <%= stylesheet_link_tag "site" %>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <%= partial "partials/header" %>
+  <main id="main">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </main>
+  <%= partial "partials/footer" %>
+</body>
+</html>

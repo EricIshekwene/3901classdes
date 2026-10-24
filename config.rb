@@ -73,6 +73,31 @@ helpers do
     end
   end
 
+  # Lucide icons (ISC license), inlined so the site needs no icon font or script.
+  ICONS = {
+    "mail" => '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+    "pin" => '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+    "clock" => '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+    "arrow-right" => '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+    "external" => '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+    "file" => '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>',
+    "book" => '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+    "code" => '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+    "calendar" => '<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/>'
+  }.freeze
+
+  def icon(name)
+    %(<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">#{ICONS.fetch(name)}</svg>)
+  end
+
+  def initials(name)
+    name.split.map { |part| part[0] }.join[0, 2]
+  end
+
+  def carmen(path = "")
+    data.course.carmen_url + path
+  end
+
   def nav_link(label, url)
     active = current_page.url.sub(%r{^/}, "") == url || (url == "index.html" && current_page.url == "/")
     attrs = active ? { class: "nav-link is-active", "aria-current" => "page" } : { class: "nav-link" }

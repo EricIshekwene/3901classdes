@@ -1,0 +1,19 @@
+<div class="person">
+  <span class="avatar" aria-hidden="true"><%= initials(person.name) %></span>
+  <div>
+    <h3 class="person-name"><%= person.name %></h3>
+    <p class="person-role"><%= person.role %></p>
+    <ul class="person-details">
+      <li><%= icon "mail" %><a href="mailto:<%= person.email %>"><%= person.email %></a></li>
+      <% if person.office %>
+        <li><%= icon "pin" %><span><%= person.office %></span></li>
+      <% end %>
+      <% person.hours.each do |slot| %>
+        <li><%= icon "clock" %><span><%= slot.day %>, <%= slot.time %></span></li>
+      <% end %>
+    </ul>
+    <% if person.note %>
+      <p class="person-note"><%= person.note %></p>
+    <% end %>
+  </div>
+</div>

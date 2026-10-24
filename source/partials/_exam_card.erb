@@ -1,0 +1,17 @@
+<% past = to_date(exam.date) < config[:today] %>
+<article class="card exam-card<%= " is-past" if past %>">
+  <h3>
+    <%= exam.name %>
+    <% if past %>
+      <span class="badge">Done</span>
+    <% else %>
+      <span class="badge badge-exam"><%= days_until(exam.date) %></span>
+    <% end %>
+  </h3>
+  <p class="exam-date"><%= long_date(exam.date) %></p>
+  <dl class="exam-facts">
+    <div><dt>Time</dt><dd><%= exam.time %></dd></div>
+    <div><dt>Room</dt><dd><%= exam.room %></dd></div>
+    <div><dt>Covers</dt><dd><%= exam.coverage %></dd></div>
+  </dl>
+</article>
