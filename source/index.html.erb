@@ -1,0 +1,101 @@
+---
+title: null
+---
+<section class="hero">
+  <div>
+    <span class="eyebrow"><%= data.course.code %> · <%= data.course.term.name %></span>
+    <h1><%= data.course.title %></h1>
+  </div>
+  <p class="hero-lead">Build real web applications as a team, from HTML and CSS to Ruby on Rails. Everything you need for the term is on this site, and everything you submit lives in Carmen.</p>
+  <ul class="meta-list">
+    <li><strong>Lectures</strong> <%= data.course.lectures.days %>, <%= data.course.lectures.time %></li>
+    <li><strong>Room</strong> <%= data.course.lectures.room %></li>
+    <li><strong>Credits</strong> <%= data.course.credits %></li>
+  </ul>
+  <div class="button-row">
+    <a class="button" href="<%= url_for "schedule.html" %>#week<%= current_week_number.clamp(1, data.schedule.weeks.size) %>">This week's lectures <%= icon "arrow-right" %></a>
+    <a class="button button-outline" href="<%= carmen "/assignments" %>">Carmen assignments <%= icon "external" %></a>
+  </div>
+</section>
+
+<div class="home-grid">
+  <section class="card home-upcoming" aria-labelledby="upcoming-heading">
+    <div class="section-header">
+      <h2 id="upcoming-heading">Upcoming</h2>
+      <span class="badge">As of <%= short_date(config[:today]) %></span>
+    </div>
+    <% items = upcoming_items %>
+    <% if items.empty? %>
+      <p class="empty">Nothing else on the calendar. Good luck on finals.</p>
+    <% else %>
+      <ul class="upcoming-list">
+        <% items.each do |item| %>
+          <li class="upcoming-item">
+            <span class="date-tile" aria-hidden="true">
+              <span class="date-tile-month"><%= item[:date].strftime("%b") %></span>
+              <span class="date-tile-day"><%= item[:date].day %></span>
+            </span>
+            <div>
+              <p class="upcoming-title">
+                <a href="<%= url_for item[:href] %>"><%= item[:title] %></a>
+                <span class="badge badge-<%= item[:kind] %>"><%= days_until(item[:date]) %></span>
+              </p>
+              <p class="upcoming-detail"><%= short_date(item[:date]) %><%= " · #{item[:detail]}" if item[:detail] %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
+
+  <section class="card home-week" aria-labelledby="weekly-heading">
+    <div class="section-header">
+      <h2 id="weekly-heading">Weekly schedule</h2>
+      <span class="badge"><%= data.course.lectures.room %></span>
+    </div>
+    <ul class="weekly">
+      <% data.course.weekly.each do |day| %>
+        <li class="weekly-day">
+          <strong><%= day.day %></strong>
+          <ul class="weekly-slots">
+            <% day.slots.each do |slot| %>
+              <li><span><%= slot.label %></span> · <%= slot.time %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="card home-staff" id="staff" aria-labelledby="staff-heading">
+    <h2 id="staff-heading">Instructional staff</h2>
+    <div class="staff-stack">
+      <% data.course.staff.each do |person| %>
+        <%= partial "partials/person", locals: { person: person } %>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+<section class="section" id="exams" aria-labelledby="exams-heading">
+  <div class="section-header">
+    <h2 id="exams-heading">Exams</h2>
+    <a href="<%= url_for "syllabus.html" %>#grading">How exams are weighted</a>
+  </div>
+  <div class="exam-grid">
+    <% data.exams.each do |exam| %>
+      <%= partial "partials/exam_card", locals: { exam: exam } %>
+    <% end %>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="carmen-heading">
+  <div class="section-header">
+    <h2 id="carmen-heading">On Carmen</h2>
+  </div>
+  <ul class="quick-links">
+    <% data.course.carmen_links.each do |link| %>
+      <li><a class="quick-link" href="<%= carmen link.path %>"><%= link.label %> <%= icon "external" %></a></li>
+    <% end %>
+  </ul>
+</section>
