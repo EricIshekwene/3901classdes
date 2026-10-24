@@ -1,6 +1,6 @@
 # Content notes
 
-Everything on the site came from the current Carmen pages as a student sees them. Nothing was guessed. These are the gaps and the inconsistencies found along the way.
+Every course fact on the site (dates, rooms, points, policies, names) came from the current Carmen pages as a student sees them. Nothing was guessed. The only new writing is short introductory text, such as the line under the Home page title. These are the gaps and the inconsistencies found along the way.
 
 ## Missing from the schedule
 
@@ -33,4 +33,4 @@ Lecture files link to Carmen Modules rather than to individual files, because fi
 
 - Should the Carmen pages replace the current ones, or should the standalone site be hosted somewhere?
 - Is OSU branding (header, footer, logo) required for a standalone version?
-- Canvas's HTML sanitizer was not tested directly. The Carmen styles stick to properties Canvas is known to keep (flexbox, borders, colors, spacing), but each page should be previewed after pasting.
+- The Carmen versions have not been pasted into Canvas yet. They stick to basic CSS (flexbox, borders, colors, spacing) to give them the best chance with the Canvas sanitizer, but preview each page after pasting.
