@@ -10,7 +10,7 @@
   --border: #e4e4e7;
   --border-strong: #d4d4d8;
   --text: #09090b;
-  --text-muted: #71717a;
+  --text-muted: #67676f;
   --accent: #ba0c2f;
   --accent-hover: #9a0a27;
   --accent-subtle: #fdf2f4;
@@ -807,7 +807,13 @@ tfoot th {
 }
 
 .exam-card.is-past {
-  opacity: 0.6;
+  background: var(--surface);
+  box-shadow: none;
+}
+
+.exam-card.is-past .exam-date,
+.exam-card.is-past h3 {
+  color: var(--text-muted);
 }
 
 .exam-card h3 {
